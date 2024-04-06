@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Ticker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="stock" data-symbol="AAPL" data-price="150.00"></div>
+    <div class="container" id="stock-block">
+        <div class="current-block" style="background-color: #ff0000;" data-price="150.00">TICK</div>
+    </div>
+    <div class="container right" id="newBlockContainer"></div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
