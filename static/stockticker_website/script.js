@@ -4,6 +4,7 @@ const newBlockContainer = document.getElementById('newBlockContainer');
 const lowerBound = 140.00; // Example lower bound of the price range
 const upperBound = 160.00; // Example upper bound of the price range
 const blockWidth = 40;
+var blockNum = 0;
 
 stockBlock.style.transform = 'translateY(' + window.innerHeight/2 + 'px)';
 
@@ -51,9 +52,10 @@ setInterval(function() {
     const currentTranslateX = parseFloat(getComputedStyle(stockBlock).transform.split(',')[4]);
     stockBlock.style.transform = `translateX(${currentTranslateX - blockWidth}px)`;
 
+    blockNum += 1;
     // Create a new block element and add it to the new block container
     const newBlock = document.createElement('div');
-    newBlock.className = 'new-block';
+    newBlock.className = `block-${blockNum}`;
     newBlockContainer.appendChild(newBlock);
     updateStockPositionY(lowerBound, upperBound);
-}, 5000);
+}, 2000);
